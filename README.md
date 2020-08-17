@@ -10,7 +10,7 @@ Geschrieben mit den von Google empfohlenen Best Practices
 und Bibliotheken..
 
 <p align="center">
-  <img src="health_diary.webm" width=500>
+  <img src="health_diary.webp" width=500>
 </p>
 
 # Sprachen
