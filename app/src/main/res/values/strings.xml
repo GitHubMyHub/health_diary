@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name" translatable="false">Healt Diary</string>
+    <string name="title_home">Dairy entries</string>
+    <string name="title_dashboard">Overview</string>
+    <string name="title_Data">Data</string>
+    <string name="title_new_entry">New Entry</string>
+
+    <string name="loading_image">Loading spinner</string>
+
+    <!--
+    - DateTime
+    - Height
+    - Weight
+    - Blood Pressure (Systol / Diastol)
+    - Pulse
+    - Bloodsugar mg/dL
+    -->
+
+    <string name="entryNumber" translatable="false">1</string>
+    <string name="dateTime" translatable="false">14.08.2020 12:50:55</string>
+    <string name="gender" translatable="false">1</string>
+    <string name="height" translatable="false">172</string>
+    <string name="weight" translatable="false">59</string>
+    <string name="bloodSystol" translatable="false">160</string>
+    <string name="bloodDiastol" translatable="false">100</string>
+    <string name="pulse" translatable="false">70</string>
+    <string name="bloodSugar" translatable="false">120</string>
+
+    <string name="name_height">Height (cm)</string>
+    <string name="name_weight">Weight (kg)</string>
+    <string name="name_bloodSystol">Systol</string>
+    <string name="name_bloodDiastol">Diastol</string>
+    <string name="name_pulse">Pulse</string>
+    <string name="name_bloodSugar">Sugar (mg/dl)</string>
+
+    <string name="delete_entry_title">Delete entry</string>
+    <string name="delete_entry_body">Are you sure you want to delete this entry?</string>
+    <string name="entry_deleted">Entry deleted</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="gender_option_1">Male</string>
+    <string name="gender_option_2">Female</string>
+
+    <string name="save_button">Save</string>
+    <string name="status_save_button">Saved</string>
+</resources>

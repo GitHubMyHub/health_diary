@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="property"
+            type="com.healtdiary.app.data.Data" />
+
+        <variable
+            name="clickListener"
+            type="com.healtdiary.app.ui.data.DataAdapter.OnClickListener" />
+
+        <variable
+            name="clickListenerInfo"
+            type="com.healtdiary.app.ui.data.DataAdapter.OnClickListenerInfo" />
+
+        <variable
+            name="clickListenerOption"
+            type="com.healtdiary.app.ui.data.DataAdapter.OnClickListenerOption" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewListItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{() -> clickListener.onClick(property)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- android:foreground="?android:attr/selectableItemBackground" -->
+            <!-- android:onClick="@{() -> clickListener.onClick(property)}" -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgViewData"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_google_calendar"
+                    tools:src="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/textViewEntryNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Integer.toString(property.id)}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgViewData"
+                    app:layout_constraintEnd_toEndOf="@+id/imgViewData"
+                    app:layout_constraintStart_toStartOf="@+id/imgViewData"
+                    app:layout_constraintTop_toTopOf="@+id/imgViewData"
+                    tools:text="@string/entryNumber" />
+
+                <TextView
+                    android:id="@+id/txtViewDatetime"
+                    android:layout_width="311dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="right"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.dateTime}"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgViewData"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/dateTime" />
+
+                <TextView
+                    android:id="@+id/txtViewGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/gender" />
+
+                <TextView
+                    android:id="@+id/txtViewHeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="411dp"
+                    android:layout_marginRight="411dp"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.height}"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtViewDatetime"
+                    tools:text="@string/height" />
+
+                <TextView
+                    android:id="@+id/txtViewWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.weight}"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtViewDatetime"
+                    tools:text="@string/weight" />
+
+                <TextView
+                    android:id="@+id/txtViewBloodSystol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.bloodSystol}"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtViewDatetime"
+                    tools:text="@string/bloodSystol" />
+
+                <TextView
+                    android:id="@+id/txtViewBloodDiastol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.bloodDiastol}"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtViewDatetime"
+                    tools:text="@string/bloodDiastol" />
+
+                <TextView
+                    android:id="@+id/txtViewPulse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.pulse}"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtViewDatetime"
+                    tools:text="@string/pulse" />
+
+                <TextView
+                    android:id="@+id/txtViewBloodSugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@{property.bloodSugar}"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtViewDatetime"
+                    tools:text="@string/bloodSugar" />
+
+                <ImageView
+                    android:id="@+id/imageOverViewWeight"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="@{() -> clickListenerInfo.onClick(`weight`, property)}"
+                    app:layout_constraintEnd_toStartOf="@+id/imageOverViewSystol"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/imgViewData"
+                    app:layout_constraintTop_toBottomOf="@+id/btnOption"
+                    app:srcCompat="@drawable/ic_weight" />
+
+                <ImageView
+                    android:id="@+id/imageOverViewSystol"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="@{() -> clickListenerInfo.onClick(`systol`, property)}"
+                    app:layout_constraintEnd_toStartOf="@+id/imageOverViewDiastol"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/imageOverViewWeight"
+                    app:layout_constraintTop_toTopOf="@+id/imageOverViewWeight"
+                    app:srcCompat="@drawable/ic_pressure" />
+
+                <ImageView
+                    android:id="@+id/imageOverViewDiastol"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="@{() -> clickListenerInfo.onClick(`diastol`, property)}"
+                    app:layout_constraintEnd_toStartOf="@+id/imageOverViewPulse"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/imageOverViewSystol"
+                    app:layout_constraintTop_toTopOf="@+id/imageOverViewSystol"
+                    app:srcCompat="@drawable/ic_pressure" />
+
+                <ImageView
+                    android:id="@+id/imageOverViewPulse"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:onClick="@{() -> clickListenerInfo.onClick(`pulse`, property)}"
+                    app:layout_constraintEnd_toStartOf="@+id/imageOverViewBloodSugar"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/imageOverViewDiastol"
+                    app:layout_constraintTop_toTopOf="@+id/imageOverViewDiastol"
+                    app:srcCompat="@drawable/ic_pulse" />
+
+                <ImageView
+                    android:id="@+id/imageOverViewBloodSugar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="@{() -> clickListenerInfo.onClick(`sugar`, property)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/imageOverViewPulse"
+                    app:layout_constraintTop_toTopOf="@+id/imageOverViewPulse"
+                    app:srcCompat="@drawable/ic_blood" />
+
+                <ImageButton
+                    android:id="@+id/btnOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#0000"
+                    android:onClick="@{() -> clickListenerOption.onClick(property)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtViewDatetime"
+                    app:srcCompat="@drawable/ic_delete" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageOverViewBloodSugar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

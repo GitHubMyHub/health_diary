@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">Messungen</string>
+    <string name="title_dashboard">Übersicht</string>
+    <string name="title_Data">Daten</string>
+    <string name="title_new_entry">Neuer Eintrag</string>
+    <string name="loading_image">Lade Balken</string>
+    <string name="name_height">Höhe (cm)</string>
+    <string name="name_weight">Gewicht (kg)</string>
+    <string name="name_bloodSystol">Systol</string>
+    <string name="name_bloodDiastol">Diastol</string>
+    <string name="name_pulse">Puls</string>
+    <string name="name_bloodSugar">Blutzucker</string>
+    <string name="delete_entry_title">Eintrag löschen</string>
+    <string name="delete_entry_body">Möchten du diesen Eintrag löschen?</string>
+    <string name="entry_deleted">Eintrag gelöscht</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="gender_option_1">Männlich</string>
+    <string name="gender_option_2">Weiblich</string>
+    <string name="save_button">Speichern</string>
+    <string name="status_save_button">Gespeichert</string>
+</resources>
